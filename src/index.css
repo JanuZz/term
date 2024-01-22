@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+	--bg-col: #2E3440;
+	--text-col: #D8DEE9;
+	--text-col-cmd: #81A1C1;
+	--text-col-prefix: #88C0D0;
+	--text-col-err: #BF616A;
+}
+
+* {
+  font-size: 1.2rem;
+  font-family: 'Fira Code', monospace;
+}
+
+body {
+	background: var(--bg-col);
+  margin: 2rem;
+	
+	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.prefix {
+	display: inline-flex;
+	width: 100%;
+	gap: 1ch;
+	color: var(--text-col-prefix);
+}
+
+.prefix > input {
+	color: var(--text-col-cmd)
+}
+
+input {
+	background: transparent;
+	display: inline-flex;
+  height: min-content;
+	outline: none;
+	border: none;
+	padding: 0;
+	color: var(--text-col-prefix);
+}
+
+pre {
+	margin: 0;
+}
+
+a {
+	color: #5E81AC;
+}
+
+span.line {
+	color: var(--text-col);
+	display: block;
+	animation: typewriter 2s steps(60, end);
+	overflow-x: clip;
+	max-width: 100%;
+}
+
+span.line.no-anim {
+	animation: none !important;
+}
+
+span.line.error {
+	color: var(--text-col-err);
+}
+
+span.line > span.prefix {
+	color: var(--text-col-prefix);
+	margin-right: 1ch;
+	width: min-content;
+}
+
+@keyframes typewriter {
+	from {
+		width: 0;
+		white-space: pre;
+	}
+
+	to {
+		white-space: inherit;
+		width: 100%;
+	}
+}
